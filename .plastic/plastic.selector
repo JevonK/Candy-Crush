@@ -1,4 +1,0 @@
-repository "Candy Crush 2025-09-18_16-41-38/Candy Crush@33261229759270@cloud"
-  path "/"
-    br "/main"
-    co "/main"
