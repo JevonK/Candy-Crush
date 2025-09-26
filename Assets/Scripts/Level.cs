@@ -33,6 +33,7 @@ public class Level : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        currentScore = 0;
         hud.SetScore(currentScore);
     }
 

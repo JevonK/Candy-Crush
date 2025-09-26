@@ -8,8 +8,11 @@ public class GameOver : MonoBehaviour
 
     public GameObject screenParent;
     public GameObject scoreParent;
+    public GameObject backButton;
     public TextMeshProUGUI loseText;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI doneText;
+
     public UnityEngine.UI.Image[] stars;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,6 +36,7 @@ public class GameOver : MonoBehaviour
     {
         screenParent.SetActive(true);
         scoreParent.SetActive(false);
+        backButton.SetActive(false);
 
         Animator animator = GetComponent<Animator>();
 
@@ -46,6 +50,7 @@ public class GameOver : MonoBehaviour
     {
         screenParent.SetActive(true);
         loseText.enabled = false;
+        backButton.SetActive(false);
 
         scoreText.text = score.ToString();
         scoreText.enabled = false;
@@ -91,5 +96,21 @@ public class GameOver : MonoBehaviour
     public void OnDoneClicked()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelect");
+    }
+
+    public void ShowBack()
+    { 
+        screenParent.SetActive(true);
+        scoreParent.SetActive(false);
+        backButton.SetActive(false);
+        loseText.text = "Return to level select";
+        doneText.text = "back";
+
+        Animator animator = GetComponent<Animator>();
+
+        if (animator)
+        {
+            animator.Play("GameOverShow");
+        }
     }
 }

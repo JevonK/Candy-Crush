@@ -120,5 +120,10 @@ public class HUD : MonoBehaviour
         gameOver.ShowLose();
     }
 
+    public void OnGoBack()
+    {
+        gameOver.ShowBack();
+    }
+
     
 }
